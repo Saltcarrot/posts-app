@@ -49,11 +49,6 @@ const App: FC = () => {
 
 	////////////// Post with author and comments
 	const {
-		user: author,
-		loading: isAuthorLoading,
-		error: authorError,
-	} = useTypeSelector((state) => state.user)
-	const {
 		post,
 		loading: isPostLoading,
 		error: postError,
@@ -64,16 +59,12 @@ const App: FC = () => {
 		error: commentsError,
 	} = useTypeSelector((state) => state.comments)
 
-	const { fetchPost, fetchUser, fetchComments } = useActions()
+	const { fetchPost, fetchComments } = useActions()
 
 	useEffect(() => {
 		fetchPost(4)
 		fetchComments(4)
 	}, [])
-
-	useEffect(() => {
-		fetchUser(post?.userId!)
-	}, [post])
 
 	if (isPostLoading) {
 		return <h1>Loading...</h1>
@@ -82,11 +73,6 @@ const App: FC = () => {
 	} else {
 		return (
 			<>
-				<div>
-					{isAuthorLoading && <h2>Загрузка автора</h2>}
-					{authorError && <h2>{authorError}</h2>}
-					{author && <h1>{author.email}</h1>}
-				</div>
 				<div>{post?.body}</div>
 				<hr />
 				<div>
@@ -95,7 +81,7 @@ const App: FC = () => {
 					{comments ? (
 						<div>
 							{comments.map((comment) => (
-								<div>
+								<div key={comment.id}>
 									{comment.name} <br /> {comment.body}
 								</div>
 							))}

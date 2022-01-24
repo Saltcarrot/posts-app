@@ -1,9 +1,12 @@
-import * as UserActionCreators from './user'
-import * as CommentsActionCreators from './comment'
-import * as PostActionCreators from './post'
+import { fetchUser } from './user'
+import { fetchComments } from './comment'
+import { fetchPost } from './post'
+import { fetchPosts } from './posts'
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
-	...UserActionCreators,
-	...CommentsActionCreators,
-	...PostActionCreators,
+	fetchUser,
+	fetchComments,
+	fetchPost,
+	fetchPosts,
 }

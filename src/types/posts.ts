@@ -6,27 +6,27 @@ export interface IPostsState {
 	error: string | null
 }
 
-export enum PostActionTypes {
+export enum PostsActionTypes {
 	FETCH_POSTS = 'FETCH_POSTS',
-	FETCH_POSTS_SUCCESS = 'FETCH_POSTS',
+	FETCH_POSTS_SUCCESS = 'FETCH_POSTS_SUCCESS',
 	FETCH_POSTS_ERROR = 'FETCH_POSTS_ERROR',
 }
 
 interface IFetchPostsAction {
-	type: PostActionTypes.FETCH_POSTS
+	type: PostsActionTypes.FETCH_POSTS
 }
 
 interface IFetchPostsSuccessAction {
-	type: PostActionTypes.FETCH_POSTS_SUCCESS
+	type: PostsActionTypes.FETCH_POSTS_SUCCESS
 	payload: IPost[]
 }
 
 interface IFetchPostsErrorAction {
-	type: PostActionTypes.FETCH_POSTS_ERROR
+	type: PostsActionTypes.FETCH_POSTS_ERROR
 	payload: string
 }
 
-export type TPostAction =
+export type TPostsAction =
 	| IFetchPostsAction
 	| IFetchPostsSuccessAction
 	| IFetchPostsErrorAction

@@ -6,12 +6,12 @@ export const fetchPost = (postId: number) => {
 	return async (dispatch: Dispatch<TPostAction>) => {
 		try {
 			dispatch({ type: PostActionTypes.FETCH_POST })
-			const postResponse = await axios.get(
+			const response = await axios.get(
 				`https://jsonplaceholder.typicode.com/posts/${postId}`
 			)
 			dispatch({
 				type: PostActionTypes.FETCH_POST_SUCCESS,
-				payload: postResponse.data,
+				payload: response.data,
 			})
 		} catch {
 			dispatch({
