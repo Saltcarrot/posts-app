@@ -16,11 +16,11 @@ export const commentReducer = (
 ): ICommentState => {
 	switch (action.type) {
 		case CommentsActionTypes.FETCH_COMMENTS:
-			return { loading: true, error: null, comments: [] }
+			return { ...state, loading: true }
 		case CommentsActionTypes.FETCH_COMMENTS_SUCCESS:
-			return { loading: false, error: null, comments: action.payload }
+			return { ...state, comments: action.payload }
 		case CommentsActionTypes.FETCH_COMMENTS_ERROR:
-			return { loading: false, error: action.payload, comments: [] }
+			return { ...state, error: action.payload }
 		default:
 			return state
 	}

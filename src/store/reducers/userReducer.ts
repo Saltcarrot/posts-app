@@ -12,11 +12,11 @@ export const userReducer = (
 ): IUserState => {
 	switch (action.type) {
 		case UserActionTypes.FETCH_USER:
-			return { loading: true, error: null, user: null }
+			return { ...state, loading: true }
 		case UserActionTypes.FETCH_USER_SUCCESS:
-			return { loading: false, error: null, user: action.payload }
+			return { ...state, user: action.payload }
 		case UserActionTypes.FETCH_USER_ERROR:
-			return { loading: false, error: action.payload, user: null }
+			return { ...state, error: action.payload }
 		default:
 			return state
 	}
