@@ -5,7 +5,7 @@ import {
 	Route,
 } from 'react-router-dom'
 import PostItem from '../components/pages/PostItem'
-import PostsList from '../components/pages/PostsList'
+import PostsList from '../components/pages/PostList/PostsList'
 import UserProfile from '../components/pages/UserProfile'
 
 const Routes: FC = () => {

@@ -1,0 +1,137 @@
+@import '../../../assets/sass/_variables'
+
+.sort_container
+	margin-bottom: 30px
+
+	display: flex
+	align-items: center
+	justify-content: space-between
+
+	> div
+		display: flex
+
+	button
+		padding: 5px
+
+		display: flex
+		align-items: center
+		justify-content: center
+
+		border-radius: 10px
+
+		&:disabled
+			opacity: .2
+
+		&:first-of-type
+			margin-right: 10px
+
+		> svg
+			font-size: 24px
+
+	.pagination
+		.page_btn
+			&:hover
+				border-color: $purple
+				color: $purple
+
+	.limit_range
+		.limit_item
+			width: 40px
+			height: 40px
+
+			display: flex
+			align-items: center
+			justify-content: center
+
+			cursor: pointer
+
+			border-radius: 10px
+			border: 2px solid transparent
+
+			&:not(:last-of-type)
+				margin-right: 10px
+
+			&:hover
+				border: 2px solid rgba($red, .4)
+				color: rgba($red, .4)
+
+			&.active
+				border: 2px solid $red
+				color: $red
+
+	.view_btns
+		> .btn
+			color: rgba($font-color, .2)
+
+			transition: border-color .2s ease, color .2s ease
+
+			&.active
+				border-color: $purple
+				color: $purple
+
+		@media (max-width: $mobile)
+			display: none
+
+.posts_list
+	display: flex
+
+	@media (max-width: $mobile)
+		flex-direction: column !important
+
+	.post
+		padding: 15px 20px
+
+		border-radius: 10px
+		border: 1px solid rgba($purple, .2)
+
+		&:not(:first-of-type)
+			margin-top: 20px
+
+		@media (max-width: $mobile)
+			width: 100% !important
+
+		.header
+			margin-bottom: 30px
+			.title
+				font-size: 24px
+
+		.footer
+			margin-top: 30px
+
+			.btn
+				width: 100px
+
+				padding: 10px 15px
+
+				border-radius: 10px
+
+				background-color: $button
+
+				transition: background-color .4s ease, color .4s ease
+
+				&:hover
+					background-color: $purple
+					color: #fff
+
+.row
+	flex-direction: column
+	.post
+		width: 100%
+
+		border-bottom: 1px solid rgba($purple, .2)
+
+.column
+	flex-direction: row
+	flex-wrap: wrap
+	justify-content: space-between
+	.post
+		width: calc(50% - 10px)
+
+		display: flex
+		flex-direction: column
+		align-items: start
+		justify-content: space-between
+
+		&:not(:nth-of-type(1)),
+		&:not(:nth-of-type(2))
+			margin-top: 20px

@@ -19,8 +19,6 @@ export const postsReducer = (
 			return { ...state, page: action.payload }
 		case PostsActionTypes.SET_POSTS_LIMIT:
 			return { ...state, limit: action.payload }
-		// case PostsActionTypes.FETCH_POSTS_BY_USER_ID:
-		// 	return { ...state, posts: action.payload }
 		case PostsActionTypes.FETCH_POSTS_SUCCESS:
 			return { ...state, loading: false, posts: action.payload }
 		case PostsActionTypes.FETCH_POSTS_ERROR:

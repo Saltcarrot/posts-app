@@ -5,7 +5,7 @@ import { store } from './store/index'
 
 // import App from './App'
 
-import './index.css'
+import './assets/sass/global.sass'
 import Routes from './routes/Routes'
 
 ReactDOM.render(

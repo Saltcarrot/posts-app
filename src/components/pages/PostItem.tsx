@@ -28,13 +28,9 @@ const PostItem: FC = () => {
 		}
 	}, [])
 
-	const onClickHandler = () => {
-		navigate(-1)
-	}
-
 	return (
 		<article className='post'>
-			<button onClick={onClickHandler}>Back</button>
+			<button onClick={() => navigate(-1)}>Back</button>
 			{isPostLoading && <div>Loading post...</div>}
 			{postError && <div>{postError}</div>}
 			{post && (
