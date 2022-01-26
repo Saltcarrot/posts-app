@@ -2,7 +2,7 @@ import axios from 'axios'
 import { Dispatch } from 'react'
 import { CommentsActionTypes, TCommentsAction } from '../../types/comment'
 
-export const fetchComments = (postId: number) => {
+export const fetchComments = (postId: string) => {
 	return async (dispatch: Dispatch<TCommentsAction>) => {
 		try {
 			dispatch({ type: CommentsActionTypes.FETCH_COMMENTS })

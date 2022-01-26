@@ -2,7 +2,7 @@ import axios from 'axios'
 import { Dispatch } from 'react'
 import { PostActionTypes, TPostAction } from '../../types/post'
 
-export const fetchPost = (postId: number) => {
+export const fetchPost = (postId: string) => {
 	return async (dispatch: Dispatch<TPostAction>) => {
 		try {
 			dispatch({ type: PostActionTypes.FETCH_POST })

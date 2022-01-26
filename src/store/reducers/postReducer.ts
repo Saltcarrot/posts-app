@@ -14,7 +14,7 @@ export const postReducer = (
 		case PostActionTypes.FETCH_POST:
 			return { ...state, loading: true }
 		case PostActionTypes.FETCH_POST_SUCCESS:
-			return { ...state, post: action.payload }
+			return { ...state, loading: false, post: action.payload }
 		case PostActionTypes.FETCH_POST_ERROR:
 			return { ...state, error: action.payload }
 		default:

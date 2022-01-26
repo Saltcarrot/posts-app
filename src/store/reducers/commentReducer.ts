@@ -18,7 +18,7 @@ export const commentReducer = (
 		case CommentsActionTypes.FETCH_COMMENTS:
 			return { ...state, loading: true }
 		case CommentsActionTypes.FETCH_COMMENTS_SUCCESS:
-			return { ...state, comments: action.payload }
+			return { ...state, loading: false, comments: action.payload }
 		case CommentsActionTypes.FETCH_COMMENTS_ERROR:
 			return { ...state, error: action.payload }
 		default:

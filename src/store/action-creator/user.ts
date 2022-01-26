@@ -2,7 +2,7 @@ import axios from 'axios'
 import { Dispatch } from 'react'
 import { TUseAction, UserActionTypes } from '../../types/user'
 
-export const fetchUser = (userId: number) => {
+export const fetchUser = (userId: string) => {
 	return async (dispatch: Dispatch<TUseAction>) => {
 		try {
 			dispatch({ type: UserActionTypes.FETCH_USER })

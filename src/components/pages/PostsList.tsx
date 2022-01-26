@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useActions } from '../../hooks/useActions'
 import { useTypeSelector } from '../../hooks/useTypeSelector'
 import Header from '../common/Header'
@@ -21,18 +22,27 @@ const PostsList = () => {
 	}, [])
 
 	return (
-		<div>
+		<>
 			<Header />
 			<div className='container my-0 mx-auto'>
+				{isloading && <div>Loading posts...</div>}
+				{error && <div>{error}</div>}
 				{posts &&
 					posts.map((post) => (
-						<article key={post.id}>
-							<h2>{post.title}</h2>
-							<p>{post.body}</p>
+						<article key={post.id} className='post'>
+							<header className='post-header'>
+								<h2>{post.title}</h2>
+							</header>
+							<section className='post-body'>
+								<p className='text'>{post.body}</p>
+							</section>
+							<footer className='post-footer'>
+								<Link to={`/posts/${post.id}`}>Read more...</Link>
+							</footer>
 						</article>
 					))}
 			</div>
-		</div>
+		</>
 	)
 }
 
