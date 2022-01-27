@@ -1,8 +1,8 @@
 import { FC, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate, useParams } from 'react-router-dom'
-import { useActions } from '../../hooks/useActions'
-import { useTypeSelector } from '../../hooks/useTypeSelector'
+import { useActions } from '../../../hooks/useActions'
+import { useTypeSelector } from '../../../hooks/useTypeSelector'
 
 const PostItem: FC = () => {
 	const { id } = useParams<{ id?: string }>()

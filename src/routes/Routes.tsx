@@ -4,18 +4,21 @@ import {
 	Routes as Switch,
 	Route,
 } from 'react-router-dom'
-import PostItem from '../components/pages/PostItem'
-import PostsList from '../components/pages/PostList/PostsList'
-import UserProfile from '../components/pages/UserProfile'
+import { routesList } from '../types/route'
 
 const Routes: FC = () => {
 	return (
 		<Router>
 			<Switch>
-				<Route path={'/'} element={<div>Home</div>} />
-				<Route path={'/posts'} element={<PostsList />} />
-				<Route path={'/posts/:id'} element={<PostItem />} />
-				<Route path={'/users/:id'} element={<UserProfile />} />
+				{routesList.map((route) => {
+					return (
+						<Route
+							key={route.path}
+							path={route.path}
+							element={<route.element />}
+						/>
+					)
+				})}
 			</Switch>
 		</Router>
 	)

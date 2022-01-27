@@ -3,7 +3,7 @@ import { IconType } from 'react-icons'
 import { MdArticle } from 'react-icons/md'
 import { FaCommentAlt } from 'react-icons/fa'
 
-export interface INavbar {
+interface INavbar {
 	path: string
 	icon: IconType
 	title: string
