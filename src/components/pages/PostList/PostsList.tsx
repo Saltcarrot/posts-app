@@ -8,7 +8,7 @@ import { useActions } from '../../../hooks/useActions'
 import { useTypeSelector } from '../../../hooks/useTypeSelector'
 
 import Layout from '../../common/Layout'
-// import Header from '../../common/Header'
+import Header from '../../common/Header/Header'
 
 import styles from './PostsList.module.sass'
 
@@ -46,7 +46,7 @@ const PostsList: FC = () => {
 
 	return (
 		<>
-			{/* <Header /> */}
+			<Header />
 			<Layout>
 				<div className={styles.sort_container}>
 					<div className={styles.pagination}>

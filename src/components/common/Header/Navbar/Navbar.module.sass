@@ -1,0 +1,44 @@
+@import '../../../../assets/sass/_variables'
+
+.nav_menu
+	display: flex
+	align-items: center
+
+	.nav_item
+		height: 30px
+
+		display: flex
+		align-items: center
+
+		&:not(:last-of-type)
+			margin-right: 30px
+
+		.item_link
+			display: flex
+			align-items: center
+
+			position: relative
+
+			transition: color .4s ease
+
+			&.active::before
+				height: 8px
+				width: 8px
+
+				top: -4px
+				left: -6px
+
+				content: ''
+
+				position: absolute
+
+				border-radius: 4px
+				background-color: $red
+
+			&:hover
+				color: $purple
+
+			> svg
+				margin-right: 5px
+
+				font-size: 20px
