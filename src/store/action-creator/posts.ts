@@ -12,12 +12,6 @@ export const fetchPosts = (page: number = 1, limit: number = 5) => {
 					params: { _page: page, _limit: limit },
 				}
 			)
-			// setTimeout(() => {
-			// 	dispatch({
-			// 		type: PostsActionTypes.FETCH_POSTS_SUCCESS,
-			// 		payload: response.data,
-			// 	})
-			// }, 500)
 			dispatch({
 				type: PostsActionTypes.FETCH_POSTS_SUCCESS,
 				payload: response.data,

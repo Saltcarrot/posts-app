@@ -11,6 +11,7 @@ import Layout from '../../common/Layout'
 import Header from '../../common/Header/Header'
 
 import styles from './PostsList.module.sass'
+import Loader from '../../common/UI/Loader/Loader'
 
 const PostsList: FC = () => {
 	const {
@@ -99,7 +100,7 @@ const PostsList: FC = () => {
 					}`}
 				>
 					{isLoading ? (
-						<div>Loading posts...</div>
+						<Loader />
 					) : error ? (
 						<div>{error}</div>
 					) : (
