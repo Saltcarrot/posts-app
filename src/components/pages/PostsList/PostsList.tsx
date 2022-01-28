@@ -13,6 +13,7 @@ import Header from '../../common/Header/Header'
 import styles from './PostsList.module.sass'
 import Loader from '../../common/UI/Loader/Loader'
 import Alert from '../../common/UI/Alert/Alert'
+import PostItem from '../../common/PostItem/PostItem'
 
 const PostsList: FC = () => {
 	const {
@@ -106,19 +107,9 @@ const PostsList: FC = () => {
 						<Alert type='error' text={error} />
 					) : (
 						posts &&
-						posts.map((post) => (
-							<article key={post.id} className={styles.post}>
-								<header className={styles.header}>
-									<h2 className={styles.title}>{post.title}</h2>
-								</header>
-								<section className='post-body'>
-									<p className='text'>{post.body}</p>
-								</section>
-								<footer className={styles.footer}>
-									<button className={styles.btn}>Read</button>
-								</footer>
-							</article>
-						))
+						posts.map((post) => {
+							return <PostItem post={post} />
+						})
 					)}
 				</div>
 			</Layout>

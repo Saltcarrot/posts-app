@@ -78,44 +78,9 @@
 	@media (max-width: $mobile)
 		flex-direction: column !important
 
-	.post
-		padding: 15px 20px
-
-		border-radius: 10px
-		border: 1px solid rgba($purple, .2)
-
-		&:not(:first-of-type)
-			margin-top: 20px
-
-		@media (max-width: $mobile)
-			width: 100% !important
-
-		.header
-			margin-bottom: 30px
-			.title
-				font-size: 24px
-
-		.footer
-			margin-top: 30px
-
-			.btn
-				width: 100px
-
-				padding: 10px 15px
-
-				border-radius: 10px
-
-				background-color: $button
-
-				transition: background-color .4s ease, color .4s ease
-
-				&:hover
-					background-color: $purple
-					color: #fff
-
 .row
 	flex-direction: column
-	.post
+	> article
 		width: 100%
 
 		border-bottom: 1px solid rgba($purple, .2)
@@ -125,7 +90,7 @@
 	flex-wrap: wrap
 	justify-content: space-between
 
-	.post
+	> article
 		width: calc(50% - 10px)
 
 		display: flex

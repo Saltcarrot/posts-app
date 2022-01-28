@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import PostItem from '../components/pages/PostItem/PostItem'
+import SinglePost from '../components/pages/SinglePost/SinglePost'
 import PostsList from '../components/pages/PostsList/PostsList'
 import CommentsList from '../components/pages/CommentsList/CommentsList'
 
@@ -16,7 +16,7 @@ export const routesList: IRoute[] = [
 	},
 	{
 		path: '/post/:id',
-		element: PostItem,
+		element: SinglePost,
 	},
 	{
 		path: '/comments',
