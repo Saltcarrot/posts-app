@@ -15,7 +15,7 @@ export const routesList: IRoute[] = [
 		element: PostsList,
 	},
 	{
-		path: '/post/:id',
+		path: '/posts/:id',
 		element: SinglePost,
 	},
 	{

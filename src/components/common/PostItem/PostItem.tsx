@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { Link } from 'react-router-dom'
 import { IPost } from '../../../types/post'
 
 import styles from './PostItem.module.sass'
@@ -17,7 +18,9 @@ const PostItem: FC<IPostProps> = ({ post }: IPostProps) => {
 				<p className='text'>{post.body}</p>
 			</section>
 			<footer className={styles.footer}>
-				<button className={styles.btn}>Read</button>
+				<Link to={`/posts/${post.id}`} className={styles.post_link}>
+					Read
+				</Link>
 			</footer>
 		</article>
 	)
