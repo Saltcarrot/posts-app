@@ -1,9 +1,5 @@
 import { FC, useEffect, useState } from 'react'
 
-import { HiViewList } from 'react-icons/hi'
-import { BsFillGridFill } from 'react-icons/bs'
-import { GrFormPrevious, GrFormNext } from 'react-icons/gr'
-
 import { useActions } from '../../../hooks/useActions'
 import { useTypeSelector } from '../../../hooks/useTypeSelector'
 
@@ -14,6 +10,9 @@ import styles from './PostsList.module.sass'
 import Loader from '../../common/UI/Loader/Loader'
 import Alert from '../../common/UI/Alert/Alert'
 import PostItem from '../../common/PostItem/PostItem'
+import PaginationArrows from '../../common/UI/PaginationArrows/PaginationArrows'
+import LimitRange from '../../common/UI/LimitRange/LimitRange'
+import ViewBlock from '../../common/UI/ViewBlock/ViewBlock'
 
 const PostsList: FC = () => {
 	const {
@@ -27,7 +26,6 @@ const PostsList: FC = () => {
 
 	const [page, setPage] = useState<number>(initialPage)
 	const [limit, setLimit] = useState<number>(initialLimit)
-	const limits = [3, 5, 10]
 
 	const [view, setView] = useState<boolean>(true)
 
@@ -52,49 +50,14 @@ const PostsList: FC = () => {
 			<Header />
 			<Layout>
 				<div className={styles.sort_container}>
-					<div className={styles.pagination}>
-						<button
-							className={styles.page_btn}
-							onClick={prevPage}
-							disabled={isLoading ? true : false}
-						>
-							<GrFormPrevious />
-						</button>
-						<button
-							className={styles.page_btn}
-							onClick={nextPage}
-							disabled={isLoading ? true : posts.length === 0 ? true : false}
-						>
-							<GrFormNext />
-						</button>
-					</div>
-					<div className={styles.limit_range}>
-						{limits.map((l) => (
-							<div
-								key={l}
-								className={`${styles.limit_item} ${
-									l === limit && styles.active
-								}`}
-								onClick={() => setLimit(l)}
-							>
-								{l}
-							</div>
-						))}
-					</div>
-					<div className={styles.view_btns}>
-						<button
-							className={`${styles.btn} ${view ? styles.active : ' '}`}
-							onClick={() => setView(!view)}
-						>
-							<HiViewList />
-						</button>
-						<button
-							className={`${styles.btn} ${!view ? styles.active : ' '}`}
-							onClick={() => setView(!view)}
-						>
-							<BsFillGridFill />
-						</button>
-					</div>
+					<PaginationArrows
+						isPostsLoading={isLoading}
+						postsLength={posts.length}
+						prevPage={prevPage}
+						nextPage={nextPage}
+					/>
+					<LimitRange limit={limit} setLimit={setLimit} />
+					<ViewBlock view={view} setView={setView} />
 				</div>
 				<div
 					className={`${styles.posts_list} ${

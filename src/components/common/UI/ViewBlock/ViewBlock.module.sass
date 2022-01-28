@@ -1,0 +1,14 @@
+@import '../../../../assets/sass/_variables'
+
+.view_btns
+	> .btn
+		color: rgba($font-color, .2)
+
+		transition: border-color .2s ease, color .2s ease
+
+		&.active
+			border-color: $purple
+			color: $purple
+
+		@media (max-width: $mobile)
+			display: none
