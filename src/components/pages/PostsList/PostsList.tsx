@@ -98,9 +98,12 @@ const PostsList: FC = () => {
 						view ? styles.row : styles.column
 					}`}
 				>
-					{isLoading && <div>Loading posts...</div>}
-					{error && <div>{error}</div>}
-					{posts &&
+					{isLoading ? (
+						<div>Loading posts...</div>
+					) : error ? (
+						<div>{error}</div>
+					) : (
+						posts &&
 						posts.map((post) => (
 							<article key={post.id} className={styles.post}>
 								<header className={styles.header}>
@@ -113,7 +116,8 @@ const PostsList: FC = () => {
 									<button className={styles.btn}>Read</button>
 								</footer>
 							</article>
-						))}
+						))
+					)}
 				</div>
 			</Layout>
 		</>
