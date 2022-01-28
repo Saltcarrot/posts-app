@@ -12,6 +12,7 @@ import Header from '../../common/Header/Header'
 
 import styles from './PostsList.module.sass'
 import Loader from '../../common/UI/Loader/Loader'
+import Alert from '../../common/UI/Alert/Alert'
 
 const PostsList: FC = () => {
 	const {
@@ -102,7 +103,7 @@ const PostsList: FC = () => {
 					{isLoading ? (
 						<Loader />
 					) : error ? (
-						<div>{error}</div>
+						<Alert type='error' text={error} />
 					) : (
 						posts &&
 						posts.map((post) => (
