@@ -71,7 +71,7 @@ const PostsList: FC = () => {
 					) : (
 						posts &&
 						posts.map((post) => {
-							return <PostItem post={post} />
+							return <PostItem post={post} key={post.id} />
 						})
 					)}
 				</div>
