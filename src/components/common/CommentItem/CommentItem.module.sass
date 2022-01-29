@@ -1,0 +1,20 @@
+@import '../../../assets/sass/_variables'
+
+.comment_container
+	&:not(:last-of-type)
+		margin-bottom: 10px
+
+.comment
+	.title,
+	.email
+		margin-bottom: 10px
+
+	.title
+		color: darken($purple, 30%)
+
+	.email
+		display: block
+
+		font-style: italic
+
+		color: rgba($red, .8)

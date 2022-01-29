@@ -49,7 +49,7 @@ const PostsList: FC = () => {
 		<>
 			<Header />
 			<Layout>
-				<div className={styles.sort_container}>
+				<section className={styles.sort_container}>
 					<PaginationArrows
 						isPostsLoading={isLoading}
 						postsLength={posts.length}
@@ -58,8 +58,8 @@ const PostsList: FC = () => {
 					/>
 					<LimitRange limit={limit} setLimit={setLimit} />
 					<ViewBlock view={view} setView={setView} />
-				</div>
-				<div
+				</section>
+				<section
 					className={`${styles.posts_list} ${
 						view ? styles.row : styles.column
 					}`}
@@ -71,10 +71,16 @@ const PostsList: FC = () => {
 					) : (
 						posts &&
 						posts.map((post) => {
-							return <PostItem post={post} key={post.id} />
+							return (
+								<PostItem
+									key={post.id}
+									post={post}
+									link={`/posts/${post.id}`}
+								/>
+							)
 						})
 					)}
-				</div>
+				</section>
 			</Layout>
 		</>
 	)

@@ -6,9 +6,10 @@ import styles from './PostItem.module.sass'
 
 interface IPostProps {
 	post: IPost
+	link: string
 }
 
-const PostItem: FC<IPostProps> = ({ post }: IPostProps) => {
+const PostItem: FC<IPostProps> = ({ post, link }: IPostProps) => {
 	return (
 		<article key={post.id} className={styles.post}>
 			<header className={styles.header}>
@@ -18,9 +19,17 @@ const PostItem: FC<IPostProps> = ({ post }: IPostProps) => {
 				<p className='text'>{post.body}</p>
 			</section>
 			<footer className={styles.footer}>
-				<Link to={`/posts/${post.id}`} className={styles.post_link}>
-					Read
-				</Link>
+				{link.includes('posts') ? (
+					<Link to={link} className={styles.post_link}>
+						Read post
+					</Link>
+				) : (
+					link.includes('users') && (
+						<Link to={link} className={styles.post_link}>
+							Read user profile
+						</Link>
+					)
+				)}
 			</footer>
 		</article>
 	)
