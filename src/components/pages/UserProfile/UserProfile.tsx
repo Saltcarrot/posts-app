@@ -6,7 +6,7 @@ import { useTypeSelector } from '../../../hooks/useTypeSelector'
 
 import Header from '../../common/Header/Header'
 import Layout from '../../common/Layout'
-import PostItem from '../../common/PostItem/PostItem'
+import Posts from '../../common/PostsList/PostsList'
 import Alert from '../../common/UI/Alert/Alert'
 import Loader from '../../common/UI/Loader/Loader'
 
@@ -21,6 +21,8 @@ const UserProfile: FC = () => {
 	} = useTypeSelector((state) => state.user)
 	const {
 		posts,
+		page,
+		limit,
 		loading: isPostsLoading,
 		error: postsError,
 	} = useTypeSelector((state) => state.posts)
@@ -29,9 +31,14 @@ const UserProfile: FC = () => {
 	useEffect(() => {
 		if (id) {
 			fetchUser(id)
-			fetchPostsByUserId(id)
 		}
 	}, [])
+
+	useEffect(() => {
+		if (id) {
+			fetchPostsByUserId(id, page, limit)
+		}
+	}, [page, limit])
 
 	return (
 		<>
@@ -69,27 +76,16 @@ const UserProfile: FC = () => {
 						)
 					)}
 				</section>
-				<section className={styles.posts_wrapper}>
-					<h3>User posts - {posts.length} </h3>
-				</section>
-				<section className={styles.user_posts}>
-					{isPostsLoading ? (
-						<Loader />
-					) : postsError ? (
-						<Alert type='error' text={postsError} />
-					) : (
-						posts &&
-						posts.map((post) => {
-							return (
-								<PostItem
-									key={post.id}
-									post={post}
-									link={`/posts/${post.id}`}
-								/>
-							)
-						})
-					)}
-				</section>
+				<div className={styles.posts_title}>
+					<h3>User posts</h3>
+				</div>
+				<Posts
+					posts={posts}
+					page={page}
+					limit={limit}
+					isLoading={isPostsLoading}
+					error={postsError}
+				/>
 			</Layout>
 		</>
 	)

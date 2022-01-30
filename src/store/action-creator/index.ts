@@ -1,7 +1,12 @@
 import { fetchUser } from './user'
 import { fetchComments } from './comment'
 import { fetchPost } from './post'
-import { fetchPosts, fetchPostsByUserId } from './posts'
+import {
+	fetchPosts,
+	fetchPostsByUserId,
+	setPostsPage,
+	setPostsLimit,
+} from './posts'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -10,4 +15,6 @@ export default {
 	fetchPost,
 	fetchPosts,
 	fetchPostsByUserId,
+	setPostsPage,
+	setPostsLimit,
 }

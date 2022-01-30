@@ -1,7 +1,29 @@
 @import '../../../../assets/sass/_variables'
 
 .pagination
+	display: flex
 	.page_btn
+		height: 30px
+		width: 30px
+
+		display: flex
+		align-items: center
+		justify-content: center
+
+		border-radius: 10px
+
+		> svg
+			font-size: 24px
+
 		&:hover
 			border-color: $purple
 			color: $purple
+
+		&:disabled
+			opacity: .3
+
+			cursor: inherit
+
+			&:hover
+				border-color: transparent
+				color: inherit
