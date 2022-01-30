@@ -6,7 +6,7 @@ import { useTypeSelector } from '../../../hooks/useTypeSelector'
 
 import Header from '../../common/Header/Header'
 import Layout from '../../common/Layout'
-import Posts from '../../common/PostsList/PostsList'
+import PostsList from '../../common/PostsList/PostsList'
 import Alert from '../../common/UI/Alert/Alert'
 import Loader from '../../common/UI/Loader/Loader'
 
@@ -79,7 +79,7 @@ const UserProfile: FC = () => {
 				<div className={styles.posts_title}>
 					<h3>User posts</h3>
 				</div>
-				<Posts
+				<PostsList
 					posts={posts}
 					page={page}
 					limit={limit}

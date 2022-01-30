@@ -6,7 +6,7 @@ import Alert from '../UI/Alert/Alert'
 import LimitRange from '../UI/LimitRange/LimitRange'
 import Loader from '../UI/Loader/Loader'
 import PaginationArrows from '../UI/PaginationArrows/PaginationArrows'
-import ViewBlock from '../UI/ViewBlock/ViewBlock'
+// import ViewBlock from '../UI/ViewBlock/ViewBlock'
 
 import styles from './PostsList.module.sass'
 
@@ -19,7 +19,7 @@ interface IPostsListProps {
 }
 
 const PostsList: FC<IPostsListProps> = (props: IPostsListProps) => {
-	const [view, setView] = useState<string>('row')
+	// const [view, setView] = useState<string>('row')
 
 	return (
 		<>

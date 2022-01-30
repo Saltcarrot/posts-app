@@ -6,9 +6,9 @@ import { useTypeSelector } from '../../../hooks/useTypeSelector'
 import Layout from '../../common/Layout'
 import Header from '../../common/Header/Header'
 
-import Posts from '../../common/PostsList/PostsList'
+import PostsList from '../../common/PostsList/PostsList'
 
-import styles from './PostsList.module.sass'
+// import styles from './PostsList.module.sass'
 
 const PostsListPage: FC = () => {
 	const {
@@ -28,7 +28,7 @@ const PostsListPage: FC = () => {
 		<>
 			<Header />
 			<Layout>
-				<Posts
+				<PostsList
 					posts={posts}
 					page={page}
 					limit={limit}
