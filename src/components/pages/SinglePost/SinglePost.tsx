@@ -51,7 +51,7 @@ const SinglePost: FC = () => {
 					)}
 				</section>
 				<section className={styles.comments_section}>
-					<h3>Post comments</h3>
+					<h3>Post comments - {comments.length}</h3>
 				</section>
 				{isCommentsLoading ? (
 					<Loader />

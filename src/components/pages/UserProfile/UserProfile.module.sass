@@ -1,0 +1,35 @@
+@import '../../../assets/sass/_variables'
+
+.user_info
+	margin-bottom: 30px
+
+	span
+		font-weight: bold
+
+	> *
+		margin-bottom: 10px
+
+	.username
+		color: $purple
+	.email
+		color: rgba($red, .8)
+
+	.email,
+	.phone,
+	.website
+		font-style: italic
+
+.posts_wrapper
+	margin-bottom: 10px
+
+.user_posts
+	> article
+		&:not(:last-of-type)
+			border-bottom: 1px solid rgba($purple, .2)
+
+			> footer
+				margin-bottom: 20px
+
+		&:not(:first-of-type)
+			> header
+				margin-top: 10px
