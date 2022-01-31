@@ -1,7 +1,6 @@
 import { IconType } from 'react-icons'
 
 import { MdArticle } from 'react-icons/md'
-import { FaCommentAlt } from 'react-icons/fa'
 
 interface INavbar {
 	path: string
@@ -14,10 +13,5 @@ export const navbarItems: INavbar[] = [
 		path: '/posts',
 		icon: MdArticle,
 		title: 'Posts',
-	},
-	{
-		path: '/comments',
-		icon: FaCommentAlt,
-		title: 'Comments',
 	},
 ]

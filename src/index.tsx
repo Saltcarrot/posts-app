@@ -7,12 +7,14 @@ import { store } from './store/index'
 
 import './assets/sass/global.sass'
 import Routes from './routes/Routes'
+import AppProvider from './providers/AppProvider'
 
 ReactDOM.render(
 	<React.StrictMode>
 		<Provider store={store}>
 			{/* <App /> */}
-			<Routes />
+			{/* <Routes /> */}
+			<AppProvider />
 		</Provider>
 	</React.StrictMode>,
 	document.getElementById('root')
