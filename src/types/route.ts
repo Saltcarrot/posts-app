@@ -2,7 +2,6 @@ import { FC } from 'react'
 
 import SinglePost from '../components/pages/SinglePost/SinglePost'
 import PostsListPage from '../components/pages/PostsListPage/PostsListPage'
-import CommentsList from '../components/pages/CommentsList/CommentsList'
 import UserProfile from '../components/pages/UserProfile/UserProfile'
 
 interface IRoute {
@@ -18,10 +17,6 @@ export const routesList: IRoute[] = [
 	{
 		path: '/posts/:id',
 		element: SinglePost,
-	},
-	{
-		path: '/comments',
-		element: CommentsList,
 	},
 	{
 		path: '/users/:id',

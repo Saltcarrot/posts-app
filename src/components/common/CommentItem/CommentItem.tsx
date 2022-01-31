@@ -5,9 +5,10 @@ import styles from './CommentItem.module.sass'
 
 interface ICommentProps {
 	comment: IComment
+	link?: string
 }
 
-const CommentItem: FC<ICommentProps> = ({ comment }: ICommentProps) => {
+const CommentItem: FC<ICommentProps> = ({ comment, link }: ICommentProps) => {
 	return (
 		<section className={styles.comment_container}>
 			<article key={comment.id} className={styles.comment}>
